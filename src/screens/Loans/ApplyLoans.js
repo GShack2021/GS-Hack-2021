@@ -14,6 +14,7 @@ import { ListItem, ListSeparator } from '../../components/List';
 export default function ApplyLoansScreen({ route, navigation }) {
 
     const [number, onChangeNumber] = useState(null);
+    const [comments, setComments] = useState('')
 
     // Passed params are in route
     const { id, title, subtitle, amount, repaid } = route.params // Destructure the params
@@ -23,15 +24,47 @@ export default function ApplyLoansScreen({ route, navigation }) {
           <View style={styles.innerView} >
             <Text style={styles.titleText}>
                 {title}
-                {"\n"}
+            </Text>
+            <Text style={{  }}>
                 {repaid} / {amount}
+            </Text>
+
+
+            <View style={{
+                flexDirection: 'row', 
+                margin: 20, 
+                alignItems: 'center',
+                // justifyContent: 'space-between'
+            }}>
+                <Text>Payment {"\n"} Amount</Text>
+                <Text style={{fontSize: 25}}>(IDR)</Text>
+
+                <TextInput
+                    style={styles.input}
+                    onChangeText={onChangeNumber}
+                    value={number}
+                    placeholder="$$ Amount"
+                    keyboardType="numeric"
+                />
+            </View>
+
+
+            {/* Comments section */}
+            <Text style={{  }}>
+                Comments/Notes
             </Text>
             <TextInput
                 style={styles.input}
-                onChangeText={onChangeNumber}
-                value={number}
-                placeholder="Payment Amount"
-                keyboardType="numeric"
+                onChangeText={setComments}
+                placeholder="Enter comments here..."
+            />
+            <Button 
+                title="Next"
+                onPress={() => navigation.navigate('Paynow', {
+                    ...route.params,
+                    number,
+                    comments
+                })}
             />
           </View>
       </View>
@@ -46,9 +79,10 @@ const styles = StyleSheet.create({
     },
     innerView: {
         borderWidth: 1,
-        height: '75%',
-        padding: 50,
-        alignContent: 'center'
+        height: 350,
+        padding: 40,
+        alignItems: 'center',
+        justifyContent: 'space-between'
     },
     input: {
       height: 40,
@@ -57,11 +91,10 @@ const styles = StyleSheet.create({
       padding: 10,
     },
     button: {
-        alignSelf: 'flex-end'
+        // justifySelf: 'flex-end'
     },
     titleText: {
         fontWeight: 'bold',
-        marginRight: 20,
     },
   });
 
