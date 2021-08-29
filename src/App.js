@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react'
 import { store, persistor } from '@/Store'
 import { ApplicationNavigator } from '@/Navigators'
 import './Translations'
+import { withAuthenticator, AmplifySignOut} from "@aws-amplify/ui-react";
 
 const App = () => (
   <Provider store={store}>
@@ -21,4 +22,13 @@ const App = () => (
   </Provider>
 )
 
-export default App
+function App() {
+  return (
+    <div>
+      <AmplifySignOut />
+      My App
+    </div>
+  );
+}
+
+export default withAuthenticator(App, true)
