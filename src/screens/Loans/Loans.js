@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
     Text, 
     View, 
@@ -12,7 +12,10 @@ import {
 import colors from '../../constants/colors';
 import { ListItem, ListSeparator } from '../../components/List';
 
-export default function AllLoansScreen({ navigation }) {
+// For ID
+import uuid from 'react-native-uuid'
+
+export default function AllLoansScreen({ route, navigation }) {
 
     const [currentLoans, setCurrentLoans] = useState([
         {
@@ -47,6 +50,26 @@ export default function AllLoansScreen({ navigation }) {
             repaid: 2000,
         }
     ])
+
+    useEffect(() => {
+        // Means came from Done. Add in task.
+        if (route.params.toAdd !== undefined) {
+            let newCurrentLoans = [
+                ...currentLoans,
+                {
+                    id: uuid.v4(),
+                    title: 'New Loan',
+                    Subtitle: '',
+                    amount: route.params.finalLoan,
+                    repaid: 0,
+                }
+            ]
+
+            setCurrentLoans(newCurrentLoans)
+        } else if (route.params.toUpdate !== undefined) {
+            // Means came from Confirm payment.
+        }
+    }, [route])
 
     const handlePress = () => {
         console.log('hello')

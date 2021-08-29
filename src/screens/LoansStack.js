@@ -8,6 +8,7 @@ import Paynow from './Loans/Paynow'
 import Confirm from './Loans/Confirm'
 import NewLoan from './Loans/NewLoan'
 import Done from './Loans/Done'
+import BeforeDone from './Loans/BeforeDone'
 
 const LoansStack = createStackNavigator();
 
@@ -19,6 +20,7 @@ export default function LoansStackScreen() {
             <LoansStack.Screen name="NewLoan" component={NewLoan} />
             <LoansStack.Screen name="Paynow" component={Paynow} />
             <LoansStack.Screen options={{headerShown: false}} name="Confirm" component={Confirm} />
+            <LoansStack.Screen name="BeforeDone" component={BeforeDone} />
             <LoansStack.Screen options={{headerShown: false}} name="Done" component={Done} />
         </LoansStack.Navigator>
     )

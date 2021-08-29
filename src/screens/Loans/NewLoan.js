@@ -19,7 +19,7 @@ export default function ApplyLoansScreen({ route, navigation }) {
     const handlePress = () => {
 
         if (number && number <= loanableAmount) {
-            navigation.navigate('Done', {
+            navigation.navigate('BeforeDone', {
                 ...route.params,
                 number,
                 loanableAmount,

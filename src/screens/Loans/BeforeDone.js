@@ -14,8 +14,7 @@ export default function PaynowScreen({ route, navigation }) {
     
     return (
       <View style={styles.view}>
-          <Image source={require('../../../assets/checkmark-green-150.png')} />
-          <Text style={{fontSize: 40}}>Loan Complete</Text>
+          <Text style={{fontSize: 40}}>Confirmation</Text>
           <View style={styles.innerView}>
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <Text style={styles.titleText}>Final Loan Amount </Text>
@@ -33,17 +32,12 @@ export default function PaynowScreen({ route, navigation }) {
           </View>
 
           <Button 
-                titleStyle={{
-                    fontSize: 30,
-                }}
-                color="green"
-                title="Back to Loans"
-                onPress={() => navigation.navigate('Loans', {
-                  ...route.params,
-                  toAdd: true,
-                  finalLoan: route.params.number * (1 + route.params.interest/100)
-                })}
-            />
+            color="green"
+            title="Confirm"
+            onPress={() => navigation.navigate('Done', {
+              ...route.params
+            })}
+        />
       </View>
     );
 }
