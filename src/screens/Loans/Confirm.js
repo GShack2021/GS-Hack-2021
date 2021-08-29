@@ -33,12 +33,15 @@ export default function PaynowScreen({ route, navigation }) {
           </View>
 
           <Button 
-                titleStyle={{
-                    fontSize: 30,
-                }}
-                color="green"
-                title="Pay Now!"
-                onPress={() => navigation.navigate('Confirm')}
+              titleStyle={{
+                  fontSize: 30,
+              }}
+              color="green"
+              title="Back to Loans"
+              onPress={() => navigation.navigate('Loans', {
+                ...route.params,
+                toUpdate: true
+              })}
             />
       </View>
     );
@@ -71,32 +74,3 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
   });
-
-const containerStyles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: colors.background,
-      paddingVertical: 15,
-    },
-
-    text: {
-        fontSize: 25,
-        paddingTop: 10
-    }
-});
-
-const listItemStyles = StyleSheet.create({
-    row: {
-      flexDirection: 'row',
-      paddingHorizontal: 15,
-      paddingVertical: 10,
-      backgroundColor: colors.white,
-      justifyContent: 'space-between',
-      marginBottom: 14
-    },
-    
-    separator: {
-      height: StyleSheet.hairlineWidth,
-      backgroundColor: colors.border,
-    },
-});

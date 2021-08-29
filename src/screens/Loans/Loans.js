@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import React, { useState, useEffect } from 'react';
 import { 
     Text, 
@@ -17,7 +18,10 @@ import uuid from 'react-native-uuid'
 
 export default function AllLoansScreen({ route, navigation }) {
 
-    let { toAdd, toUpdate } = route.params // Can be undefined
+    console.log(route)
+    console.log('hello')
+
+    // let { toAdd, toUpdate } = route.params // Can be undefined
 
     const [currentLoans, setCurrentLoans] = useState([
         {
@@ -55,7 +59,7 @@ export default function AllLoansScreen({ route, navigation }) {
 
     useEffect(() => {
         // Means came from Done. Add in task.
-        if (typeof (toAdd) !== 'undefined') {
+        if (route.params !== undefined && route.params.toAdd !== undefined) {
             let newCurrentLoans = [
                 ...currentLoans,
                 {
@@ -68,10 +72,40 @@ export default function AllLoansScreen({ route, navigation }) {
             ]
 
             setCurrentLoans(newCurrentLoans)
-        } else if (typeof(toUpdate) !== "undefined") {
+        } else if (route.params !== undefined && route.params.toUpdate !== undefined) {
             // Means came from Confirm payment.
+            let { number, repaid, id, title } = route.params // Destruturing of the params object
+            let newCurrentLoans = []
+            for (let loan of currentLoans) {
+
+                // If the ID is the same, means we matched it
+                if (loan.id === id) {
+                    if (loan.amount == (Number(number) + Number(loan.repaid))) {
+                        // if loan amount is not equivalent to number
+                        const newLoan = {
+                            ...loan,
+                            repaid: loan.amount
+                        }
+                        setPastLoans([
+                            ...pastLoans,
+                            newLoan
+                        ])
+                    } else {
+                        newCurrentLoans.push({
+                            ...loan,
+                            repaid: Number(number) + Number(loan.repaid)
+                        })
+                    }
+                    
+                } else {
+                    newCurrentLoans.push(loan)
+                }
+            }
+
+            setCurrentLoans(newCurrentLoans)
+
         }
-    }, [])
+    }, [route])
 
     const handlePress = () => {
         console.log('hello')
