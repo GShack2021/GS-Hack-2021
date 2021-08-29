@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import 'react-native-gesture-handler';
@@ -7,7 +6,7 @@ import 'react-native-gesture-handler';
 // Screens and views
 import ProfileScreen from './screens/Profile';
 import HomeScreen from './screens/Home';
-import LoansScreen from './screens/Loans'
+import LoansScreenStack from './screens/LoansStack'
 
 // import { Main } from './navigation/Main';
 
@@ -18,9 +17,9 @@ export default function App() {
     <>
       <NavigationContainer>
         {/* <Main /> */}
-        <Tab.Navigator>
+        <Tab.Navigator >
           <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Loans" component={LoansScreen} />
+          <Tab.Screen options={{headerShown: false}} name="Loans" component={LoansScreenStack} />
           <Tab.Screen name="Profile" component={ProfileScreen} />
         </Tab.Navigator>
       </NavigationContainer>

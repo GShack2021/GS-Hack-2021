@@ -12,29 +12,29 @@ const styles = StyleSheet.create({
   },
 });
 
-const screens = [
-  {
-    title: 'Text',
-    subtitle: 'An example of using the Text.js components.',
-    target: 'TextDemo',
-  },
-  {
-    title: 'Form',
-    subtitle: 'An example of using the Form.js components.',
-    target: 'FormDemo',
-  },
-  {
-    title: 'Button',
-    subtitle: 'An example of using the Button.js components.',
-    target: 'ButtonDemo',
-  },
-];
+// const screens = [
+//   {
+//     title: 'Text',
+//     subtitle: 'An example of using the Text.js components.',
+//     target: 'TextDemo',
+//   },
+//   {
+//     title: 'Form',
+//     subtitle: 'An example of using the Form.js components.',
+//     target: 'FormDemo',
+//   },
+//   {
+//     title: 'Button',
+//     subtitle: 'An example of using the Button.js components.',
+//     target: 'ButtonDemo',
+//   },
+// ];
 
-export const List = ({ navigation }) => {
+export const List = ({ navigation, data }) => {
   return (
     <FlatList
       style={styles.container}
-      data={screens}
+      data={data}
       keyExtractor={item => item.title}
       renderItem={({ item }) => (
         <ListItem
