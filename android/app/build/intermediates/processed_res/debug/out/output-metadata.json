@@ -4,7 +4,7 @@
     "type": "PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.gshack",
+  "applicationId": "com.test",
   "variantName": "processDebugResources",
   "elements": [
     {

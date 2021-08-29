@@ -1,14 +1,14 @@
-com/gshack/MainApplication.java
- com.gshack.MainApplication
- com.gshack.MainApplication$1
-com/gshack/MainActivity.java
- com.gshack.MainActivity
-com/gshack/ReactNativeFlipper.java
- com.gshack.ReactNativeFlipper
- com.gshack.ReactNativeFlipper$1
- com.gshack.ReactNativeFlipper$2
- com.gshack.ReactNativeFlipper$2$1
-com/gshack/BuildConfig.java
- com.gshack.BuildConfig
+com/test/MainApplication.java
+ com.test.MainApplication
+ com.test.MainApplication$1
+com/test/MainActivity.java
+ com.test.MainActivity
+com/test/BuildConfig.java
+ com.test.BuildConfig
 com/facebook/react/PackageList.java
  com.facebook.react.PackageList
+com/test/ReactNativeFlipper.java
+ com.test.ReactNativeFlipper
+ com.test.ReactNativeFlipper$1
+ com.test.ReactNativeFlipper$2
+ com.test.ReactNativeFlipper$2$1
