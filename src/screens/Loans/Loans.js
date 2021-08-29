@@ -12,7 +12,7 @@ import {
 import colors from '../../constants/colors';
 import { ListItem, ListSeparator } from '../../components/List';
 
-export default function currentLoansScreen({ navigation }) {
+export default function AllLoansScreen({ navigation }) {
 
     const [currentLoans, setCurrentLoans] = useState([
         {
@@ -70,7 +70,7 @@ export default function currentLoansScreen({ navigation }) {
                     </Text>
                     <Button
                         title="Pay"
-                        onPress={() => navigation.navigate('Apply')}
+                        onPress={() => navigation.navigate('Apply', item)}
                     />
                 </View>
             )}

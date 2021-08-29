@@ -9,7 +9,7 @@ const LoansStack = createStackNavigator();
 
 export default function LoansStackScreen() {
     return (
-        <LoansStack.Navigator >
+        <LoansStack.Navigator>
             <LoansStack.Screen name="Loans" component={Loans} />
             <LoansStack.Screen name="Apply" component={ApplyLoans} />
         </LoansStack.Navigator>
