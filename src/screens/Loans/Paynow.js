@@ -14,7 +14,7 @@ export default function PaynowScreen({ route, navigation }) {
     return (
       <View style={styles.view}>
           <View style={styles.innerView}>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
                 <Text style={styles.titleText}>Paying</Text>
                 <Text style={styles.titleText}>IDR: {route.params.number}</Text>
             </View>
