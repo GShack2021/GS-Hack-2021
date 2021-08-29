@@ -38,7 +38,7 @@ const ProfileScreen = () => {
           <Text style={{color:"#777777", marginLeft: 20}}>Account : 010203040506</Text>
         </View>
         <View style={styles.row}>
-          <Text style={{color:"#777777", marginLeft: 20}}>Balance : 300</Text>
+          <Text style={{color:"#777777", marginLeft: 20}}>Balance : IDR 3000</Text>
         </View>
       </View>
       
@@ -46,7 +46,8 @@ const ProfileScreen = () => {
       <View style={styles.infoBoxWrapper}>
           <View style={[styles.infoBox, {
             borderRightColor: '#dddddd',
-            borderRightWidth: 1
+            textAlign: 'center',
+            
           }]}>
             <Title>$120</Title>
             <Caption>Loan Repayment</Caption>
@@ -55,7 +56,8 @@ const ProfileScreen = () => {
       <View style={styles.infoBoxWrapper}>
           <View style={[styles.infoBox, {
             borderRightColor: '#dddddd',
-            borderRightWidth: 1
+            textAlign: 'center',
+            
           }]}>
             <Title>$50</Title>
             <Caption>Loan Repayment</Caption>
@@ -64,7 +66,8 @@ const ProfileScreen = () => {
       <View style={styles.infoBoxWrapper}>
           <View style={[styles.infoBox, {
             borderRightColor: '#dddddd',
-            borderRightWidth: 1
+            textAlign: 'center',
+            
           }]}>
             <Title>$100</Title>
             <Caption>Loan Repayment</Caption>
@@ -73,7 +76,8 @@ const ProfileScreen = () => {
       <View style={styles.infoBoxWrapper}>
           <View style={[styles.infoBox, {
             borderRightColor: '#dddddd',
-            borderRightWidth: 1
+            textAlign: 'center',
+            
           }]}>
             <Title>$120</Title>
             <Caption>Loan Repayment</Caption>
@@ -115,6 +119,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     flexDirection: 'row',
     height: 100,
+    justifyContent: 'center'
   },
   infoBox: {
     width: '50%',
@@ -136,4 +141,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 26,
   },
+  text: {
+    marginLeft: 113,
+    fontSize: 30,
+    fontWeight: 'bold'
+  }
 });
