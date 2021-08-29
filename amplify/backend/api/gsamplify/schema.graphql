@@ -1,0 +1,7 @@
+type Loan @model {
+  id: ID!
+  title: String!
+  subtitle: String
+  amount: Int
+  repaid: Int
+}

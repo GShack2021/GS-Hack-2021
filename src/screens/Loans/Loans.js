@@ -17,6 +17,8 @@ import uuid from 'react-native-uuid'
 
 export default function AllLoansScreen({ route, navigation }) {
 
+    let { toAdd, toUpdate } = route.params // Can be undefined
+
     const [currentLoans, setCurrentLoans] = useState([
         {
             id: 1,
@@ -53,7 +55,7 @@ export default function AllLoansScreen({ route, navigation }) {
 
     useEffect(() => {
         // Means came from Done. Add in task.
-        if (route.params.toAdd !== undefined) {
+        if (typeof (toAdd) !== 'undefined') {
             let newCurrentLoans = [
                 ...currentLoans,
                 {
@@ -66,10 +68,10 @@ export default function AllLoansScreen({ route, navigation }) {
             ]
 
             setCurrentLoans(newCurrentLoans)
-        } else if (route.params.toUpdate !== undefined) {
+        } else if (typeof(toUpdate) !== "undefined") {
             // Means came from Confirm payment.
         }
-    }, [route])
+    }, [])
 
     const handlePress = () => {
         console.log('hello')
