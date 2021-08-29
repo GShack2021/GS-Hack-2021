@@ -104,6 +104,13 @@ export default function AllLoansScreen({ navigation }) {
             ListHeaderComponent={ListSeparator}
             ListFooterComponent={ListSeparator}
         />
+        <View style={{marginBottom: 40 }}>
+            <Button
+                title="New Loan"
+                color='red'
+                onPress={() => navigation.navigate('NewLoan')}
+            />
+        </View>
       </View>
     );
 }
@@ -113,6 +120,7 @@ const containerStyles = StyleSheet.create({
       flex: 1,
       backgroundColor: colors.background,
       paddingVertical: 15,
+      paddingBottom: 30
     },
 
     text: {
