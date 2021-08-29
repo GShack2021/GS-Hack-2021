@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { IndexStartupContainer } from '@/Containers'
+import { IndexStartupContainer, IndexExampleContainer } from '@/Containers'
 import { useSelector } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native'
 import { navigationRef } from '@/Navigators/Root'
@@ -39,7 +39,7 @@ const ApplicationNavigator = () => {
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
         <Stack.Navigator headerMode={'none'}>
-          <Stack.Screen name="Startup" component={IndexStartupContainer} />
+          <Stack.Screen name="Startup" component={IndexExampleContainer} />
           {isApplicationLoaded && MainNavigator != null && (
             <Stack.Screen
               name="Main"

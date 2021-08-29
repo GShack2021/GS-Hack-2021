@@ -6,8 +6,6 @@ import { store, persistor } from '@/Store'
 import { ApplicationNavigator } from '@/Navigators'
 import './Translations'
 
-console.log('initialised the app')
-
 const App = () => (
 
   <Provider store={store}>
