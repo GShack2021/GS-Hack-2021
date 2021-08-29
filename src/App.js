@@ -6,7 +6,10 @@ import { store, persistor } from '@/Store'
 import { ApplicationNavigator } from '@/Navigators'
 import './Translations'
 
+console.log('initialised the app')
+
 const App = () => (
+
   <Provider store={store}>
     {/**
      * PersistGate delays the rendering of the app's UI until the persisted state has been retrieved
